@@ -42,19 +42,19 @@ class TestGame < Minitest::Test
     assert_equal(2, @player1.hand.count )
   end
 
-  
-
-  # def test_which_player_wins
-  #   @game.deal_hand(@card)
-  #   @game.change_to_next_player
-  #   @game.deal_hand(@card)
-  #   @game.change_to_next_player
-  #   @game.deal_hand(@card)
-  #   @game.change_to_next_player
-  #   @game.deal_hand(@card)
-  #   @game.change_to_next_player
-  #   @game.player1.
-  # end
+  def test_a_player_wins
+    @game.deal_hand(@card)
+    @game.change_to_next_player
+    @game.deal_hand(@card)
+    @game.change_to_next_player
+    @game.deal_hand(@card)
+    @game.change_to_next_player
+    @game.deal_hand(@card)
+    @game.change_to_next_player
+    players = [@player1, @player2]
+    result = @game.winner(players)
+    assert_equal(true, result)
+  end
 
 
 

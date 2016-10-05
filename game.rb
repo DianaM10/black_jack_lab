@@ -1,6 +1,6 @@
 class Game
 
-  attr_reader :winner
+  attr_reader :winner, :players
 
   def initialize(players)
     @players = players
@@ -24,7 +24,15 @@ class Game
     return current_player.hand << card.deal
   end
 
- 
+
+
+  def winner(players)
+    if players[0].total_of_hand > players[1].total_of_hand
+      return players[0]
+    else 
+      return players[1]
+    end
+  end
 
   
 
